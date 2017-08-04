@@ -10,6 +10,11 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
+            <link href="{{asset('css/app.css')}}" rel="stylesheet">
+    <!-- <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet"> -->
+
+
+
         <!-- Styles -->
         <style>
             html, body {
@@ -65,27 +70,20 @@
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @if (Auth::check())
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ url('/login') }}">Login</a>
-                        <a href="{{ url('/register') }}">Register</a>
-                    @endif
-                </div>
-            @endif
+
+    <h1>BCA Queue</h1>
+    <h2>Kantor Cabang Kaliurang</h2>
+       
 
             <div class="content">
                 <div class="title m-b-md">
     
    @foreach($region as $data)
-            <h3>{{$data->kcp_kaliurang->cs_queue->running}}</h3>
+            <big><strong>{{$data->kcp_kaliurang->cs_queue->running}}</strong></big> <br>
 
-    <a class="btn btn-default" style="width:60px" title="Next" href="{{ action('getdataController@tambah', $data->kcp_kaliurang->cs_queue->running) }}">Next</a>
-      <button class="btn btn-danger" style="width:60px" title="Pending" href="{{ action('getdataController@tambah', $data->kcp_kaliurang->cs_queue->running) }}">Pending</button>
-      <a class="btn btn-default" style="width:60px" title="Reset" href="{{ action('getdataController@reset') }}">Reset</a>
+    <a class="btn btn-success" style="width:80px" title="Next" href="{{ action('getdataController@tambah', $data->kcp_kaliurang->cs_queue->running) }}">Next</a>
+      <button class="btn btn-warning" style="width:80px" title="Pending" href="{{ action('getdataController@tambah', $data->kcp_kaliurang->cs_queue->running) }}">Pending</button>
+      <a class="btn btn-danger" style="width:80px" title="Reset" href="{{ action('getdataController@reset') }}">Reset</a>
     
     @endforeach
     
