@@ -85,6 +85,8 @@
 
     <a class="btn btn-default" style="width:60px" title="Next" href="{{ action('getdataController@tambah', $data->kcp_kaliurang->cs_queue->running) }}">Next</a>
       <button class="btn btn-danger" style="width:60px" title="Pending" href="{{ action('getdataController@tambah', $data->kcp_kaliurang->cs_queue->running) }}">Pending</button>
+      <a class="btn btn-default" style="width:60px" title="Reset" href="{{ action('getdataController@reset') }}">Reset</a>
+    
     @endforeach
     
                 </div>

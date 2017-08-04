@@ -17,3 +17,4 @@
 
 Route::get('/', 'getdataController@index');
 Route::get('queue/{id}', 'getdataController@tambah');
+Route::get('/reset', 'getdataController@reset');
